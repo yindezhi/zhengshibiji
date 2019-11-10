@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/1.css">
+</head>
+
+<body>
+    <section class="box">
+        <nav>
+            <span>排序</span>
+            <a href="javascript:void(0);" data-name="time">
+                <i class="up"></i>
+                <i class="down"></i>
+                上架时间
+            </a>
+            <a href="javascript:void(0);" data-name="hot">
+                <i class="up"></i>
+                <i class="down"></i>
+                热度
+            </a>
+            <a href="javascript:void(0);" data-name="price">
+                <i class="up "></i>
+                <i class="down"></i>
+                价钱
+            </a>
+            <div>
+                <select name="" id="sele">
+                    <option value="hot">按照热度搜索</option>
+                    <option value="price">按照价格搜索</option>
+                    <option value="hot">按照文字搜索</option>
+                </select>
+                <input type="text">
+                <button id="search">搜索</button>
+            </div>
+        </nav>
+        <ul class="list" id="ul"></ul>
+    </section>
+
+    <script>
+        /*
+        json文件需要通过服务器环境去拿，安装live server的目的是在编辑器中开一个服务器
+        当开了服务器之后，就可以通过http请求（fetch）的方式拿到json文件
+
+        fetch(文件路径).then(d=>d.json())
+        .then(data=>{
+            console.log(data);
+        })
+
+    */
+        fetch('./json/product.json')
+            .then(d => d.json())
+            .then(data => {
+
+
+                console.log(data);
+
+                let newdata = data.concat(); //复制一份新数组，为了一会排序的时候不影响原数组
+                //渲染数据
+                function render(newdata) {
+                    //lis就是数据生成的结构
+                    let lis = newdata.map(({
+                        title,
+                        img,
+                        price,
+                        time,
+                        hot
+                    }, i) => {
+                        return (
+                            `<li>
+                    <img src="${img}" alt="">
+                    <p
+                        title="${title}"
+                    >商品名称:<span>${title.substr(0,6)}</span></p>
+                    <p>上架时间:<span>${time}</span></p>
+                    <p>商品热度:<span>${hot}</span></p>
+                    <p>商品价格::<span>${price}</span></p>
+                </li>`
+                        );
+                    }).join('');
+                    ul.innerHTML = lis;
+                }
+                render(newdata);
+                /*
+                    排序：
+                        sort()
+                        高阶函数 
+                            参数允许传入一个函数，一般来说都是传一个函数返回一个新函数
+                        默认按照ascll码进行排列
+                    随机排序
+                        ()=>{
+                            return Math.random() - 0.5;
+                        }
+                */
+
+                const as = document.querySelectorAll('a');
+                as.forEach((ele, i) => {
+                    //每个A都添加了一个自定义属性
+                    ele.onoff = true; //默认为从小到大
+                    ele.onclick = function () {
+                        // alert(i);
+                        // console.dir(this.dataset.name);
+                        if (this.onoff) {
+                            newdata.sort((a, b) => {
+                                console.log(a - b);
+                                //如果是time，就按照转时间的方式去操作，转完之后就能相减，就能成功返回数字
+                                if (this.dataset.name === 'time') {
+                                    return new Date(a.time) - new Date(b.time)
+                                }
+                                //否则按照数字相减的方式
+                                return a[this.dataset.name] - b[this.dataset.name];
+                            });
+                            this.children[1].classList.remove('activeb');
+                            this.children[0].classList.add('activet');
+                        } else {
+                            newdata.sort((a, b) => {
+                                //如果是time，就按照转时间的方式去操作
+                                if (this.dataset.name === 'time') {
+                                    return new Date(b.time) - new Date(a.time)
+                                }
+                                //否则按照数字相减的方式
+                                return b[this.dataset.name] - a[this.dataset.name];
+                            });
+                            this.children[0].classList.remove('activet');
+                            this.children[1].classList.add('activeb');
+                        }
+
+                        this.onoff = !this.onoff;
+                        render(newdata);
+                    }
+                });
+
+
+                console.log(as.length);
+
+
+            });
+    </script>
+</body>
+
+</html>
