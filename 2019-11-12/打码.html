@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><button id="btn">发送</button>
+    <ul id="ul"></ul>
+    <script>
+       let str = '冉德鹏在看动物世界的时候打飞机'
+       console.log(str.replace(/动物世界/g,function($0){
+           let temp = '';
+           for(let i = 0;i<$0.length;i++){
+               temp += '*';     
+           }
+           return temp;
+       }));
+       
+    </script>
+</body>
+</html>
