@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      /*
+           把下面str的name，age，say换成obj中的value值
+        */
+        // let obj = {
+        //     name:'小明',
+        //     age:18,
+        //     say:'好好学习，天天向上'
+        // }  
+        // let str = '我的名字叫{name},年龄是{age}岁,我想说:{say}';
+
+        // let obj = {
+        //     name: '小明',
+        //     age: 18,
+        //     say: '好好学习，天天向上'
+        // }
+        // let str = '我的名字叫{name},年龄是{age}岁,我想说:{say}';
+
+        // for (const key in obj) {
+        //     let reg = new RegExp('{' + key + '}', 'g');
+        //     console.log(reg);
+        //     str = str.replace(reg, obj[key]);
+        // }
+        // console.log(str);
+
+        /*
+            计算下面字符串中哪个字符出现的次数最多,它是谁，出现了多少次
+        */
+
+        let str2 = 'hd82nxa89a3axdma2naejaaxaa8n2xdanja2cah2hnadhioamwajexnad8mdahiodn';
+
+        let obj = {};
+        let ans = null,
+            max = -1;
+        for (let i = 0; i < str2.length; i++) {
+            obj[str2[i]] = obj[str2[i]] === undefined ? 1 : obj[str2[i]] + 1;
+            if (max < obj[str2[i]]) {
+                max = obj[str2[i]];
+                ans = str2[i];
+            }
+        }
+        console.log(`出现最多的字符是${ans},出现了${max}次`);
+        
+    </script>
+</body>
+</html>
