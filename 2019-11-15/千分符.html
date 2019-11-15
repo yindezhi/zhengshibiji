@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let str = '10000000';
+
+      console.log(/\d(?=\d{3})/.exec(str));    
+      console.log(str.match(/(\d)(?=\d{3})+/g));
+      console.log(str.replace(/(\d)(?=(\d{3})+$)/g,'$1,'));
+
+    //   从后往前找，把3个数字前面的数字后加上一个，号
+
+    /* 
+      （?=(\d{3})）+  -> 找3个数字前的什么东西？
+      这种情况可以出现多次
+
+      加了$的意思是从结尾开始找（从字符串的最后开始查找）
+     */
+    </script>
+</body>
+</html>
