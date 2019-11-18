@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //    console.log(a);//函数
+        //    var a = 12;
+        //    function a(){
+        //        console.log(a);
+        //        a=13;
+        //    }
+        //    a();
+        //    console.log(a);//报错
+        /* 
+          解析：
+         */
+
+        // var n=0;
+        // function a(){
+        //     var n = 10;
+        //     function b(){
+        //         n++;
+        //         console.log(n);//11,12
+        //     }
+        //     b();
+        //     return b;
+        // }
+        // var c = a();
+        // c();
+        // console.log(n);//0
+        /* 
+         解析：
+         */
+
+        // var a1=4,a2=[1,2],x=6;
+        // function f(){
+        //     console.log(this.x);//6,undefined
+        // }
+        // f()
+        // function b(x,y,z) {
+        //     arguments[0]=10;
+        //     arguments[1].push(3);
+        //     arguments[2]();
+        //     y = [];
+        //     console.log(x,y);//10,[]
+        // }
+        // b(a1,a2,f);
+        // console.log(a1,a2);//4,[1,2,3]
+        /* 
+         解析：
+         */
+
+        //  function fn(i){
+        //      return function (n){
+        //          console.log(n + (i++));
+        //      }
+        //  }
+        //  var f=fn(10);
+        //  f(20);//30
+        //  fn(20)(40);//60
+        //  fn(30)(50);//80
+        //  f(30);//41
+        /* 
+         解析：
+         */
+
+        // var x = 3,
+        // obj = {x: 5};
+        // obj.fn = (function(){
+        //     this.x *= ++x;
+        //     return function (y){
+        //         this.x *= (++x)+y;
+        //         console.log(x);//13,234
+        //     }
+        // })();
+        // var fn = obj.fn;
+        // obj.fn(6);
+        // fn(4);
+        // console.log(obj.x, x);//95,234
+        /* 
+         解析：
+         */
+
+        //  function Fn(){
+        //      this.x = 10;
+        //      this.y = 20;
+        //      this.getX = function(){
+        //          console.log(this.x);
+        //      }
+        //  }
+        //  Fn.prototype.y = 40;
+        //  Fn.prototype={
+        //      x:30,
+        //      getY:function(){
+        //          this.y+=1;
+        //          console.log(this.y);
+        //      },
+        //      sum:function(){
+        //          console.log(this.x+this.y);
+        //      }
+        //  };
+        //  let f1 = new Fn;
+        //  let f2 = new Fn;
+        //  console.log(f1.getX === f2.getX);//false
+        //  console.log(f1.getY === f2.getY);//true
+        //  console.log(f1.constructor);//函数
+        //  f1.getX();//10
+        //  f2.getY();//21
+        //  f1.sum();//30
+        /* 
+         解析：
+         */
+
+        //  var F = function (){};
+        //  Object.prototype.a = function(){
+        //      console.log('a()')
+        //  };
+        //  Function.prototype.b = function(){
+        //      console.log('b()')
+        //  };
+        //  var f = new F();
+        //  f.a();//'a()'
+        //  f.b();//报错
+        //  F.a();
+        //  F.b();
+        /* 
+         解析：
+         */
+
+        // function A() { alert(1); }
+        // function Fn() {
+        //     A = function () {
+        //         alert(2);
+        //     };
+        //     return this;
+        // }
+        // Fn.A = A;
+        // Fn.prototype = {
+        //     A: () => {
+        //         alert(3);
+        //     }
+        // };
+        // A();//1
+        // Fn.A();//1
+        // Fn().A();//2
+        // new Fn.A();//1
+        // new Fn().A();//3
+        // new new Fn().A();//报错
+        /* 
+         解析：
+         */
+
+        var name = "WINDOW",
+            obj = {
+                name: "OBJ",
+                fn: (function () {
+                    console.log(this.name);//WINDOW
+                    return function () {
+                        console.log(this.name);//OBJ
+                    }
+                })()
+            },
+            fn = () => {
+                console.log(this.name);//WINDOW
+            };
+        fn();
+        obj.fn();
+        fn.call(obj);//WINDOW
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
