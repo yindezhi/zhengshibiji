@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/1.css">
+</head>
+
+<body>
+    <div id="box" >
+        <header id="head" >
+            <img src="./img/title.png" class="cloud" >
+            <div id="user" >
+                <img src="./img/微信图片_20191201163102.jpg" alt="">
+                <p>你真胖</p>
+                <a href="javascript:#"><img src="./img/gl.png" alt=""></a>
+                <p>设置</p>
+                <a href="javascript:#"><img src="./img/wen.png" alt=""></a>
+            </div>
+        </header>
+        <div class="tree-menu" onselectstart="return false;" >
+       <ul>
+           <li>微云</li>
+       </ul>
+        </div>
+        <div class="center" onselectstart="return false;">
+        <div class="breadmenu">
+                <div class="bread-nav">
+                        
+                    </div>
+        </div>     
+        <div class="action">
+            <ul>
+                <li>
+                    <img src="./img/下载.png" alt="">下载</li>
+                <li id="add"><img src="./img/新建文件夹.png" >新建</li>
+
+                <li id="del"><img src="./img/删除.png" alt="">删除</li>
+                <li id="remove"><img src="./img/移动到文件夹.png" alt="">移动</li>
+                <li id="rename"><img src="./img/重命名.png" alt="">重命名</li>
+            </ul>
+            <div id="checkedAll">
+            <img src="./img/全选 - 未选中.png" class="check">
+        </div> 
+        </div>
+        <div class="f-empty"></div>
+        
+        <div id="content">
+                
+        <div class="folders">
+    </div>
+  <div id="checkbox"></div>
+
+            </div>
+            <div class="modal-tree">
+                <h2>选择存储位置</h2>
+                <p class="folderName">我的文档</p>
+                <div class="content">
+                        <ul id="model_list">
+                            <li>
+                                <div class="tree-title tree-ico open">
+                                    <span><i></i>微云</span>
+                                </div>
+                                
+                            </li>
+                        </ul>
+                </div>
+                <div class="footer">
+                    <input type="button" name="" class="cancel" value="取消">
+                    <input type="button" name="" class="ok" value="确定">
+                    <p class="tip"></p>
+                </div>
+                <i class="icon_close" id="close"></i>
+            </div>
+            <div id="tanbox">
+                <div class="conf">
+                    <i class="close-ico" id="cha">X</i>
+                    <h3 class="conf-title">删除文件</h3>
+                    <div class="conf-content">
+                        确定要删除文件吗？
+                    </div>
+                    <div class="conf-btn">
+                        <a href="javascript:;" id="yes">确定</a>
+                        <a href="javascript:;" id="no">取消</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/sql/data.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/tools.js"></script> 
+    <script src="./js/index2.js"></script>
+</body>
+</html>
+      

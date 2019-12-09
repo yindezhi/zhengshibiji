@@ -1,0 +1,386 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    height: 70px;
+    background: skyblue;
+}
+.cloud{
+    width: 110px;
+    height: 70px;
+    margin-left: 50px;
+}
+.tree-menu{
+    width: 200px;
+    height: 700px;
+    float: left;
+	background: rgb(126, 89, 111);
+	overflow: auto;
+ 
+}
+.f-empty{
+	width:100%;
+	height:100%;
+	display: none;
+	background: url(../img/空.jpg) no-repeat 44% 40%;
+	background-size: 100vh 100vh;	
+}
+
+ul{
+    list-style: none;
+}
+#user{
+    width: 250px;
+    height: 50px;
+    float: right;
+}
+#user img {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-top: 10px;
+}
+#user p{
+    float: left;
+    line-height: 70px;
+}
+.tree-menu ul li{
+    background: rgb(126, 89, 111);
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+
+} 
+.open{
+    background: rgb(155, 128, 255);
+}
+
+.tree-menu ul li:hover{
+    background: skyblue;
+}
+.tree-menu ul li img{
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    top: 10px;
+    right:10px;
+    cursor: pointer;
+}
+.center{
+    width: 1703px;
+    height: 500px;
+    background: rgb(255, 255, 255);
+    margin-left: 200px;
+}
+.action{
+    width: 1350px;
+    height: 50px;
+    background:yellow;
+    position: relative;
+}
+
+.action ul li {
+    float: left;
+    width: 150px;
+    height: 25px;
+    background: rgb(212, 210, 236);
+    border: 1px rgb(231, 231, 231) solid;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 12.5px;
+}
+.action ul li:hover{
+    border: 1px rgb(129, 129, 245) solid;
+}
+.action img{
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.action .check{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.action .check2{
+    width: 30px;
+    height: 30px;
+    margin: -34px 0 0px 1052px;
+    display: none;
+    cursor: pointer;
+}
+
+#content{
+    height: 100%;
+	position: relative;
+}
+
+  #btn {
+    margin-bottom: 10px;
+  }
+  .folders{
+	padding: 20px 0 0 20px;
+	width:100%;
+	height:700px;
+	box-sizing: border-box;
+	background: #e2d59b;
+	overflow: auto;
+}
+  #checkbox{
+ 
+        display: none;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        background: rgba(0,133,188,0.1);
+        border:1px dotted #000;
+
+  }
+  .breadmenu{
+	height:48px;
+	border-bottom:2px solid #e2e7ea;
+	background:lightpink;
+	line-height:48px;
+}
+.bread-nav a{
+	padding:0 24px 0 14px;
+	height:48px;
+	float:left;
+	color:#2f3334;
+	font-size:14px;
+	line-height:48px;
+	background: url(../img/br_jt.png) no-repeat right center;
+}
+.bread-nav span{
+	float:left;
+	height:48px;
+	padding:0 14px;
+	color:#55addd;
+	line-height:48px;
+	border-bottom:2px solid #55addd;
+	cursor: default;
+	font-size: 25px;
+}
+a{
+    text-decoration:none;
+}
+.folders .file-item{
+    top: 15px;
+    left: 15px;
+	float:left;
+	margin-right:40px;
+	margin-bottom:40px;
+	width:180px;
+	height:180px;
+	box-sizing: border-box;
+	background: #ebeff0;
+	border-radius: 4px;
+	position: relative;
+	line-height:120px;
+	text-align: center;
+	border:1px solid #ebeff0;
+	cursor: pointer;
+}
+.folders .active{
+	background: #fff;
+	border:1px solid #54afdc;
+	box-shadow: 0px 0px 10px #d6e8f4;
+}
+.folders .active span{
+	color:#54afdc;
+}
+.folders .file-item:hover{
+	background: #fff;
+	border:1px solid #54afdc;
+	box-shadow: 0px 0px 10px #d6e8f4;
+}
+.folders .file-item:hover i{
+	border:1px solid #d1d8de;
+}
+.folders .file-item:hover span{
+	color:#54afdc;
+}
+.folders .file-item i{
+	cursor: default;
+	position: absolute;
+	left:10px;
+	top:10px;
+	width:16px;
+	height:16px;
+}
+.file-item img{
+	width:80px;
+	vertical-align:-34px ;
+}
+.folder-name{
+	display: block;
+	width:150px;
+	height:20px;
+	line-height:20px;
+	color:#69737f;
+	margin:0 auto;
+}
+.editor{
+	display: none;
+	width:120px;
+	height:20px;
+	line-height:20px;
+	color:#69737f;
+	margin:0 auto;
+	text-align: center;
+}
+
+.footer p ,.footer input {
+	float: right;
+	margin: 0px 10px;
+}
+
+.footer p {
+	margin: 0;
+	color: red;
+}
+.icon_close {
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    background: url(../img/icon_close.png) no-repeat;
+    height: 15px;
+    width: 15px;
+}
+#tanbox{
+	width:100%;
+	height:100%;
+	background: rgba(0,0,0,0.3);
+	position: absolute;
+	left:0;
+	top:0;
+    display: none;
+}
+#tanbox .conf{
+	width:360px;
+	height:200px;
+	background: #fff;
+	position: fixed;
+	left:50%;
+	top:50%;
+	margin-left:-180px;
+	margin-top:-100px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 6px #f1f1f1;
+}
+.conf .conf-title{
+	font:normal 18px/46px "微软雅黑";
+	padding:0 20px;
+	margin:0;
+	border-bottom:1px solid #ccc;
+}
+.conf .conf-content{
+	padding:40px 40px 20px 40px;
+	text-align: center;
+}
+.conf .conf-btn{
+	margin-top:20px;
+	padding-right:40px;
+	text-align: right;
+}
+.conf-btn a{
+	display: inline-block;
+	width:60px;
+	height:26px;
+	margin-left:10px;
+	border-radius: 15px;
+	background: #ccc;
+	text-align: center;
+	font:14px/26px "微软雅黑";
+	color:#fff;
+}
+.conf-btn a:nth-of-type(1){
+	background: #00BFFF;
+}
+.conf .close-ico{
+	position: absolute;
+	right:10px;
+	top:10px;
+	width:20px;
+	height:20px;
+	text-align: center;
+	border: 1px solid #ccc;
+	color: #ccc;
+	font:normal 16px/20px "微软雅黑";
+	cursor: pointer;
+}
+.conf .close-ico:hover{
+	background: #999;
+    color:#fff;
+}
+.modal-tree{
+	overflow: hidden;
+	height: 416px;
+	width: 406px;
+	border: 2px solid #55addb;
+	border-radius: 5px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	background: #fff;
+	display: none;
+	margin: -208px 0 0 -203px;
+}
+
+.modal-tree h2{
+	margin: 20px;
+	color: #000;
+}
+
+.modal-tree .folderName{
+	overflow: hidden;
+	color: #66757f;
+	margin-left: 20px;
+	padding-left: 34px;
+	background: url(../img/small_folder.png) no-repeat;
+	height: 21px;
+}
+.modal-tree .content{
+	overflow: auto;
+	width: 358px;
+	height: 238px;
+	margin: 18px 0 25px 21px;
+    border: 1px solid #e5e6e8;
+
+}
+
+.modal-tree .btn{
+	margin-top: 0;
+}
+.file-item .checked{
+	border:1px solid #d1d8de;
+    background: url(../img/checked.png) no-repeat;
+}
+
+#checkedAll{
+    width: 30px;
+    height: 30px;
+    float: left;
+    position: absolute;
+    top: 7px;
+    left: 870px;
+}
+
+.tree-title{
+	position: relative;
+}
+
+.tree-title span{
+	display: block;
+	line-height:32px;
+	cursor: default;
+}
