@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+ }   /* 清空所有默认样式  */
+ #warp{
+     width: 510px;
+     height: 510px;
+     margin: 6% auto;
+     perspective: 5000px;
+ }  /* 给整个div加宽高边距景深 */
+ #warp:hover > #box{
+     transform: scaleY(270der) rotateX(483deg);
+ }/* :hover 选择器用于选择鼠标指针浮动在上面的元素
+     也就是说给元素加旋转倾斜效果，让鼠标放上浮动 */
+#box{
+    width: 510px;
+    height: 510px;
+    position: relative;
+    transform-origin: 255px 255px 255px;
+    
+}
+</style>
+</head>
+<body>
+    <div id="warp">
+        <ul id="box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>

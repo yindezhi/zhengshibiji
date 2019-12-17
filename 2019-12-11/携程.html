@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拼多多</title>
+    <script>
+     function refreshRem() {
+            var desW = 750,//设计图的宽度
+                winW = window.screen.width, //document.documentElement.clientWidth||document.body.clientWidth;
+                ratio = winW / desW,
+                html = document.documentElement;
+                html.style.fontSize = ratio * 100 + 'px';
+        }
+        refreshRem();
+        window.addEventListener('resize', refreshRem);
+    </script>
+    <link rel="stylesheet" href="./css/拼多多.css">
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+</html>
