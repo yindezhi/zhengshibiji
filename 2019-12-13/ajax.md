@@ -1,4 +1,4 @@
-### AJAX
+  ### AJAX
     - Asynchronous(异步)  Javascript(js) And(和) XML（标记语言，数据）
 
     - 它是一个前后台数据交互的一种技术（找后台拿数据的方式）
@@ -7,9 +7,9 @@
 
     - ajax获取数据并不难，难的是拿到数据之后怎么办？（业务逻辑）
 
-```js
+```js 
     在工作中：
-        $.ajax({})
+        $.ajax({}) 
         fetch('')
         axios.get('')
         wx.request('')
