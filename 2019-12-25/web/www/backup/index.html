@@ -20,12 +20,10 @@
 <h2 id="userInfo">欢迎回来,<span id="user"></span></h2>
 <div class="form-wrapper">
     <div class="banner"></div>
-    <!-- <form id="form"> -->
         <div class="item-wrapper"><label for="username">登陆名</label><input type="text" name="username" id="username" value=""></div>
         <div class="item-wrapper"><label for="password">密码</label><input type="password" name="password" id="password" value=""></div>
         <input type="button" value="登陆" id="submit">
         <input type="button" value="注册" id="register">
-    <!-- </form> -->
     <p id="info" >请输入信息</p>
 </div>
 <script>
@@ -33,7 +31,6 @@
     register.onclick = function(){
         let v1 = username.value;
         let p1 = password.value;
-
         fetch('/api/user/register',{
             method:'post',
             body:''+new URLSearchParams({
@@ -55,8 +52,6 @@
             console.log(d);
         });
     }
-
-
     //登录
     submit.onclick = function(){
         let v1 = username.value;
@@ -83,11 +78,6 @@
             console.log(d);
         });
     }
-
-
-    
-
-
 </script>
 </body>
 </html>
