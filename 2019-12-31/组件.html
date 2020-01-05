@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ppa id="app"></ppa>
+    <script src="./vue.js"></script>
+    <script>
+    const btn = {
+        template:`<button @click="click">按钮{{num}}</button>`,
+        data(){
+            return{
+                num:0
+            }
+        },methods:{
+            click(){
+                this.num++
+            }
+        }
+    }
+    const ppa = {
+        template:`
+            <div>
+                <div>1</div>
+                <span>Vue真的不简单</span>
+                <btn></btn>
+            </div>
+        `,
+        components:{
+            btn
+        }
+    }
+    new Vue({
+        el:'#app',
+        data:{
+            msg:'haha'
+        },
+        methods:{
+
+        },
+        components:{
+            ppa,  
+        }
+    })
+    </script>
+</body>
+</html>

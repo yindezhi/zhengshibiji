@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>父元素</h1>
+        <button @click="changeFn">父元素按钮{{num}}</button>
+        <hr />
+        <temp1 
+            :nn="num"
+            @child="changeFn"
+        ></temp1>
+    </div>
+
+    <template id="temp1">
+        <div>
+            <h5>子元素</h5>
+            <button 
+                @click="add"
+            >子按钮{{nn}}</button>
+        </div>
+    </template>
+    <script src="./vue.js"></script>
+    <script>
+        const temp1 = {
+            template:'#temp1',
+            props:['nn'],
+            methods:{
+                add(){
+                    this.$emit('child');
+                }
+            }
+        }
+
+        new Vue({
+            el:'#app',
+            data:{
+                num:0
+            },
+            methods:{
+                changeFn(){
+                    this.num ++;
+                }
+            },
+            components:{
+                temp1
+            }
+        })
+    </script>
+</body>
+</html>
